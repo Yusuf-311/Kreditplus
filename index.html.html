@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kreditplus</title>
+    <!-- SEO Meta Tags-->
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg" />
+    <meta name="msapplication-TileColor" content="#766df4" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+    <!-- Vendor Styles-->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/simplebar/dist/simplebar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/tiny-slider/dist/tiny-slider.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/lightgallery.js/dist/css/lightgallery.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/flatpickr/dist/flatpickr.min.css"
+    />
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css" />
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+      <!-- Sign In Modal-->
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign in</h4>
+                <button
+                  class="btn-close btn-close-white"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="btn-close "
+                ></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">
+                  Sign in to your account using email and password provided
+                  during registration.
+                </p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <div class="input-group">
+                      <i
+                        class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"
+                      ></i>
+                      <input
+                        class="form-control rounded"
+                        type="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group">
+                      <i
+                        class="ai-lock position-absolute top-50 start-0 translate-middle-y ms-3"
+                      ></i>
+                      <div class="password-toggle w-100">
+                        <input
+                          class="form-control"
+                          type="password"
+                          placeholder="Password"
+                          required
+                        />
+                        <label
+                          class="password-toggle-btn"
+                          aria-label="Show/hide password"
+                        >
+                          <input
+                            class="password-toggle-check"
+                            type="checkbox"
+                          /><span class="password-toggle-indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3 mb-3"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="keep-signed"
+                      />
+                      <label class="form-check-label fs-sm" for="keep-signed"
+                        >Keep me signed in</label
+                      >
+                    </div>
+                    <a
+                      class="nav-link-style fs-ms"
+                      href="password-recovery.html"
+                      >Forgot password?</a
+                    >
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">
+                    Sign in
+                  </button>
+                  <p class="fs-sm pt-3 mb-0">
+                    Don't have an account?
+                    <a href="#" class="fw-medium" data-view="#modal-signup-view"
+                      >Sign up</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+            <div class="view" id="modal-signup-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign up</h4>
+                <button
+                  class="btn-close btn-close-white"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="btn-close"
+                ></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">
+                  Registration takes less than a minute but gives you full
+                  control over your orders.
+                </p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Full name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input
+                      class="form-control"
+                      type="password"
+                      placeholder="Password"
+                      required
+                    />
+                    <label
+                      class="password-toggle-btn"
+                      aria-label="Show/hide password"
+                    >
+                      <input
+                        class="password-toggle-check"
+                        type="checkbox"
+                      /><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input
+                      class="form-control"
+                      type="password"
+                      placeholder="Confirm password"
+                      required
+                    />
+                    <label
+                      class="password-toggle-btn"
+                      aria-label="Show/hide password"
+                    >
+                      <input
+                        class="password-toggle-check"
+                        type="checkbox"
+                      /><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">
+                    Sign up
+                  </button>
+                  <p class="fs-sm pt-3 mb-0">
+                    Already have an account?
+                    <a href="#" class="fw-medium" data-view="#modal-signin-view"
+                      >Sign in</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+            <div class="modal-body text-center px-4 pt-2 pb-4">
+              <hr class="my-0" />
+              <p class="fs-sm fw-medium text-heading pt-4">Or sign in with</p>
+              <a class="btn-social bs-facebook bs-lg mx-1 mb-2" href="#"
+                ><i class="ai-facebook"></i></a
+              ><a class="btn-social bs-twitter bs-lg mx-1 mb-2" href="#"
+                ><i class="ai-twitter"></i></a
+              ><a class="btn-social bs-instagram bs-lg mx-1 mb-2" href="#"
+                ><i class="ai-instagram"></i></a
+              ><a class="btn-social bs-google bs-lg mx-1 mb-2" href="#"
+                ><i class="ai-google"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar (Solid background)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header
+        class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky"
+        data-scroll-header
+        data-fixed-element
+      >
+        <div class="container px-0 px-xl-3">
+          <button
+            class="navbar-toggler ms-n2 me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#primaryMenu"
+          >
+            <span class="navbar-toggler-icon"></span></button
+          ><a
+            class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4"
+            href="index.html"
+            ><img
+              class="d-none d-lg-block"
+              src="images/Logo-kreditplus.webp"
+              alt="Around"
+              width="153" /><img
+              class="d-lg-none"
+              src="images/Logo-kreditplus.webp"
+              alt="Around"
+              width="58"
+          /></a>
+
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button
+                class="btn-close lead"
+                type="button"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Menu-->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown dropdown-mega active">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >Demos</a
+                  >
+                </li>
+                <li class="nav-item dropdown dropdown-mega active">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >Demos</a
+                  >
+                </li>
+                <li class="nav-item dropdown dropdown-mega active">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >Demos</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Hero-->
+      <section
+        class="jarallax bg-dark py-6 py-md-7"
+        style="height: 60vh"
+        data-jarallax
+        data-type="scale-opacity"
+        data-speed="0.09"
+      >
+        <div
+          class="jarallax-img"
+          style="
+            background-image: url(images/hero-kreditplus.webp);
+            background-size: cover;
+          "
+        ></div>
+        <!-- <div class="container py-md-3">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8 col-md-10">
+              <div class="bg-light rounded-3 shadow-lg py-5 px-4">
+                <form class="py-sm-2 px-sm-3">
+                  <h1 class="text-center mb-4">Reserve your spot</h1>
+                  <div class="row">
+                    <div class="col-sm-6 mb-3 pb-1">
+                      <label class="form-label" for="rf-space">Space</label>
+                      <select class="form-select" id="rf-space">
+                        <option value="Coworking main room">
+                          Coworking main room
+                        </option>
+                        <option value="Coworking terrace">
+                          Coworking terrace
+                        </option>
+                        <option value="Skype room 1" selected>
+                          Skype room 1
+                        </option>
+                        <option value="Skype room 2">Skype room 2</option>
+                        <option value="Meeting room 1">Meeting room 1</option>
+                        <option value="Meeting room 2">Meeting room 2</option>
+                        <option value="Gaming room">Gaming room</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6 mb-3 pb-1">
+                      <label class="form-label" for="rf-date"
+                        >Date and time</label
+                      >
+                      <div class="input-group">
+                        <input
+                          class="form-control appended-form-control date-picker rounded"
+                          type="text"
+                          placeholder="Choose date / time"
+                          data-datepicker-options='{"enableTime": true, "altInput": true, "altFormat": "F j, Y H:i", "dateFormat": "Y-m-d H:i", "minDate": "today"}'
+                          id="rf-date"
+                        /><i
+                          class="ai-calendar position-absolute top-50 end-0 translate-middle-y me-3"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 mb-3 pb-1">
+                      <label class="form-label" for="rf-company-size"
+                        >Company size</label
+                      >
+                      <input
+                        class="form-control"
+                        type="number"
+                        min="1"
+                        value="1"
+                        placeholder="How many people"
+                        id="rf-company-size"
+                      />
+                    </div>
+                    <div class="col-sm-6 mb-3 pb-1">
+                      <label class="form-label" for="rf-email"
+                        >Email address</label
+                      >
+                      <input
+                        class="form-control"
+                        type="email"
+                        placeholder="Your email"
+                        id="rf-email"
+                      />
+                    </div>
+                  </div>
+                  <div class="row align-items-center pt-2">
+                    <div class="col-sm-6 mb-4 mb-sm-0">
+                      <a href="tel:+15262200459"
+                        ><i class="ai-phone fs-xl me-2"></i>+ 1 526 220 0459</a
+                      >
+                    </div>
+                    <div class="col-sm-6">
+                      <button
+                        class="btn btn-primary d-block w-100"
+                        type="submit"
+                      >
+                        Reserve
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </section>
+      <!-- About (Services)-->
+      <section class="container mt-4 pt-5 mt-md-2 pt-md-7 pb-6">
+        <section>
+          <div>
+            <h3>Agunan Mobil</h3>
+            <h3>Solusi Kebutuhan Dana Anda</h3>
+            <p style="text-align: justify">
+              <strong>A. Fitur Utama</strong><br />
+              Kreditplus (PT KB Finansia Multi Finance) menyediakan fasilitas
+              pinjaman&nbsp;dengan agunan BPKB mobil sebagai
+              solusi&nbsp;kebutuhan dana Anda.
+            </p>
+
+            <p style="text-align: justify">
+              <strong>B. Manfaat</strong><br />
+              1. Mendapatkan pinjaman untuk multiguna fasilitas dana tanpa kartu
+              kredit<br />
+              2. Hanya cukup menyerahkan dokumen BPKB untuk dijadikan agunan<br />
+              3. Kendaraan dapat tetap dapat dipergunakan sebagai alat
+              transportasi<br />
+              4. Besar uang angsuran dapat disesuaikan dengan penghasilan
+              per-bulan.<br />
+              5. Pembayaran angsuran mudah, melalui: kasir, payment point
+              (indomaret, alfamart, bank, KPM), kolektor
+            </p>
+
+            <p style="text-align: justify">
+              <strong>C. Ketentuan Pembiayaan</strong><br />
+              1. Nilai Pembiayaan (Harga Barang - DP+Asuransi)<br />
+              2. Range nilai pembiayaan: minimal 20 juta, maksimal total nilai
+              pembiayaan aktif 75 milyar<br />
+              3. Maksimal tenor 60 bulan<br />
+              4. Tingkat Suku Bunga mulai dari 0,70% per-bulan, berlaku untuk
+              tenor pembiayaan 1 tahun*<br />
+              <em
+                >*Tingkat Suku Bunga dapat berubah sewaktu-waktu sesuai dengan
+                kebijakan Perusahaan yang berlaku</em
+              >
+            </p>
+
+            <p style="text-align: justify">
+              <strong>D. Persyaratan dan Tata Cara</strong><br />
+              1. WNI umur 21 atau 19 tahun jika sudah menikah<br />
+              2. Penghasilan minimal 5 juta perbulan<br />
+              3. Karyawan minimal 2 tahun telah berkerja/ Wirausaha minimal 2
+              tahun usaha dalam bindang yang sama<br />
+              4. Karak maksimal tempat tinggal 60km untuk pulau jawa dan 100 km
+              untuk luar pulau jawa dari Cabang Kreditplus<br />
+              5. Melengkapi dokumen persyaratan: FC KTP,&nbsp;FC KK, FC PBB
+              salah satu dari 3 tahun terakhir/bukti kepemilikan
+              rumah,&nbsp;Slip gaji/bukti pendapatan lainnya, FC rekening buku
+              tabungan 3 bulan terakhir, FC SIUP/FC SKU, FC NPWP
+            </p>
+
+            <p style="text-align: justify">
+              <strong>E. Risiko</strong><br />
+              1. Pengenaan denda keterlambatan jika terdapat keterlambatan dalam
+              pembayaran.<br />
+              2. Penalty jika melakukan pelunasan dipercepat.<br />
+              3. Tercatat riwayat kredit macet pada SLIK OJK, jika tidak
+              melakukan pembayaran sampai dengan 180 hari.<br />
+              4. Terdapat pengenaan biaya penyimpanan BPKB yang dihitung sejak
+              hari ke 31 setelah lunas, jika BPKB tidak diambil pada tanggal
+              yang ditentukan.<br />
+              5. Eksekusi agunan jika Debitur terbukti wanprestasi.
+            </p>
+
+            <p style="text-align: justify">
+              <strong>F. Biaya</strong><br />
+              Terdapat biaya provisi, admin, asuransi asset, asuransi jiwa,
+              penagihan, pengurusan pajak kendaraan (opsional), pengikatan
+              agunan, serta biaya admin pembayaran angsuran sesuai dengan
+              ketentuan yang berlaku.
+            </p>
+
+            <p style="text-align: justify">
+              <strong>G. Informasi Tambahan:</strong><br />
+              Tidak semua Kantor Cabang kami melayani Produk Pembiayaan di atas,
+              untuk informasi lebih lanjut silahkan menghubungi Customer Service
+              kami (Contact Center : (021) 1500605)
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section
+        class="bg-secondary bg-size-cover py-5 py-md-6"
+        style="background-image: url(images/CTA-kreditplus.webp)"
+      >
+        <div class="container py-3 py-md-0">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-6 text-center text-md-start">
+              <h2 class="mb-4 pb-3 text-light pb-md-0 mb-md-0">
+                PEMBIAYAAN KREDIT YANG <br />
+                MUDAH, CEPAT, AMAN
+              </h2>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <div
+                class="d-flex align-items-center justify-content-center justify-content-sm-start pt-4 pt-sm-2 pt-md-4"
+              >
+                <button class="btn btn-lg btn-danger">Ajukan Sekarang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 container">
+        <h3>Other Products</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img
+                src="images/car-key.webp"
+                height="500"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title h4 text-center">
+                  Jual dan Sewa Balik Agunan Mobil
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="images/car-key.webp"
+                height="500"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title h4 text-center">Pembiayaan Fleet</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="images/beli-sewa-mobil.webp" alt="..." height="100" />
+              <div class="card-body">
+                <h5 class="card-title h4 text-center">Mobil Second</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container bg-light py-5 rounded py-md-5">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 pt-5 pb-3 py-md-5 px-5">
+            <div
+              class="mx-auto me-md-5 me-xl-7 ps-3 py-md-3 order-md-1"
+              style="max-width: 516px"
+            >
+              <form
+                class="needs-validation"
+                novalidate=""
+                action="form-handler.php"
+                method="post"
+              >
+                <h2 class="pb-4">Dapatkan Pinjaman Dana Kamu Disini</h2>
+                <p
+                  class="callout d-block d-md-none d-lg-block fs-lg text-muted mb-grid-gutter"
+                >
+                  Ajukan Pinjaman dengan BPKB MOTOR, BPKB Mobil, atau BPKB
+                  Truck.
+                </p>
+                <b>Informasi Diri</b>
+                <div class="input-group mb-3 mt-2">
+                  <i
+                    class="fas fa-user position-absolute top-50 start-0 translate-middle-y ms-3"
+                  ></i>
+                  <input
+                    class="form-control rounded"
+                    type="text"
+                    name="nama"
+                    placeholder="Nama"
+                    required="true"
+                  />
+                </div>
+                <div class="input-group mb-3">
+                  <i
+                    class="fas fa-mobile-alt position-absolute top-50 start-0 translate-middle-y ms-3"
+                  ></i>
+                  <input
+                    class="form-control rounded"
+                    type="text"
+                    name="hp"
+                    placeholder="Nomor Handphone"
+                    required="true"
+                  />
+                </div>
+                <div class="input-group mb-3">
+                  <i
+                    class="fas fa-building position-absolute top-50 start-0 translate-middle-y ms-3"
+                  ></i>
+                  <input
+                    class="form-control rounded"
+                    type="text"
+                    name="kota"
+                    placeholder="Kota"
+                    required="true"
+                  />
+                </div>
+                <b>Divisi</b>
+
+                <div class="form-check mt-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="ex-radio-1"
+                    name="divisi"
+                    value="Customer Service"
+                    checked=""
+                  />
+                  <label class="form-check-label" for="ex-radio-1"
+                    >Customer Service</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="ex-radio-2"
+                    name="divisi"
+                    value="Marketing BPKB Mobil"
+                  />
+                  <label class="form-check-label" for="ex-radio-2"
+                    >Marketing BPKB Mobil</label
+                  >
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="ex-radio-3"
+                    name="divisi"
+                    value="Marketing BPKB Motor"
+                  />
+                  <label class="form-check-label" for="ex-radio-3"
+                    >Marketing BPKB Motor</label
+                  >
+                </div>
+                <b>Keterangan Tambahan</b>
+                <div class="mb-3 mt-3 pb-1">
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    name="keterangan"
+                    placeholder="Ex. Avanza, Xenia, tahun kendaraan dsb"
+                    required="true"
+                  ></textarea>
+                </div>
+                <div class="row pt-2">
+                  <div class="col-lg-6 col-md-8">
+                    <button class="btn btn-primary btn-block" type="submit">
+                      Hubungi Kami
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 pt-5 pb-3 py-md-5 text-center">
+            <h2 class="h1 text-center">Hubungi Kami</h2>
+
+            <a
+              target="_blank"
+              href="https://wa.me/6281558444484?text=Saya%20mau%20pengajuan%20ke%20BFI%20Syariah"
+            >
+              <img
+                src="https://netfin.id/site-assets/netfin/button-wa.png"
+                class="rounded mx-auto"
+                alt="adira finance whatsapp"
+                style="width: 300px"
+              /> </a
+            ><br />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer bg-dark pt-5 pt-md-6">
+      <div class="container pt-3 pt-md-0">
+        <div class="row pb-3">
+          <div class="col-md-4 mt-n2 pb-3 pb-md-0 mb-4">
+            <img
+              src="images/Logo-kreditplus.webp"
+              width="54"
+              class="pb-2"
+              alt=""
+            />
+            <h3 class="fs-5 text-light">Kreditplus</h3>
+            <p class="">
+              <span class="text-light me-1"
+                >© All rights reserved. Made by</span
+              ><a
+                class="nav-link-style nav-link-light"
+                href="https://netfin.id/"
+                target="_blank"
+                rel="noopener"
+                >Netfin.id</a
+              >
+            </p>
+            <a
+              class="btn-social bs-outline bs-facebook bs-light bs-lg me-2 mb-2"
+              href="#"
+              ><i class="text-light bi bi-facebook"></i></a
+            ><a
+              class="btn-social bs-outline bs-twitter bs-light bs-lg me-2 mb-2"
+              href="#"
+              ><i class="bi bi-twitter"></i></a
+            ><a
+              class="btn-social bs-outline bs-instagram bs-light bs-lg me-2 mb-2"
+              href="#"
+              ><i class="bi bi-instagram"></i></a
+            ><a
+              class="btn-social bs-outline bs-google bs-light bs-lg me-2 mb-2"
+              href="#"
+              ><i class="bi bi-google"></i
+            ></a>
+          </div>
+        </div>
+        <hr class="my-0 border-light" />
+        <div class="row align-items-center mt-3 py-4">
+          <div class="col-md-6 order-md-2 text-md-end mb-3">
+            <ul class="list-inline fs-sm mb-0">
+              <li class="list-inline-item">
+                <a class="nav-link-style nav-link-light" href="#">Support</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="nav-link-style nav-link-light" href="#">Contacts</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="nav-link-style nav-link-light" href="#"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 order-md-1 mb-3">
+            <p class="fs-sm mb-0">
+              <span class="text-light opacity-50 me-1"
+                >© All rights reserved. Made by</span
+              ><a
+                class="nav-link-style nav-link-light"
+                href="https://netfin.id/"
+                target="_blank"
+                rel="noopener"
+                >Netfin.id</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Back to top button--><a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      data-fixed-element
+      ><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span
+      ><i class="btn-scroll-top-icon ai-arrow-up"> </i
+    ></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="vendor/lg-fullscreen.js/dist/lg-fullscreen.min.js"></script>
+    <script src="vendor/lg-zoom.js/dist/lg-zoom.min.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="vendor/flatpickr/dist/flatpickr.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+  </body>
+</html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Around | Shop Homepage</title>
+  <!-- SEO Meta Tags-->
+  <meta
+    name="description"
+    content="Around - Multipurpose Bootstrap HTML Template"
+  />
+  <meta
+    name="keywords"
+    content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative"
+  />
+  <meta name="author" content="Createx Studio" />
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Favicon and Touch Icons-->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="assets/favicon/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="assets/favicon/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="assets/favicon/favicon-16x16.png"
+  />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+  <link
+    rel="mask-icon"
+    color="#6366f1"
+    href="assets/favicon/safari-pinned-tab.svg"
+  />
+  <meta name="msapplication-TileColor" content="#080032" />
+  <meta
+    name="msapplication-config"
+    content="assets/favicon/browserconfig.xml"
+  />
+  <meta name="theme-color" content="white" />
+  <!-- Theme mode-->
+  <script
+    type="text/javascript"
+    async=""
+    src="https://www.google-analytics.com/analytics.js"
+  ></script>
+  <script
+    type="text/javascript"
+    async=""
+    src="https://www.googletagmanager.com/gtag/js?id=G-TXTBFKF5EW&amp;l=dataLayer&amp;cx=c"
+  ></script>
+  <script
+    async=""
+    src="https://www.googletagmanager.com/gtm.js?id=GTM-WKV3GT5"
+  ></script>
+  <script>
+    let mode = window.localStorage.getItem("mode"),
+      root = document.getElementsByTagName("html")[0];
+    if (mode !== undefined && mode === "dark") {
+      root.classList.add("dark-mode");
+    } else {
+      root.classList.remove("dark-mode");
+    }
+  </script>
+  <!-- Page loading styles-->
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all 0.4s 0.2s ease-in-out;
+      transition: all 0.4s 0.2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+    .dark-mode .page-loading {
+      background-color: #121519;
+    }
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
+      opacity: 0;
+    }
+    .page-loading.active > .page-loading-inner {
+      opacity: 1;
+    }
+    .page-loading-inner > span {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #6f788b;
+    }
+    .dark-mode .page-loading-inner > span {
+      color: #fff;
+      opacity: 0.6;
+    }
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: 0.75rem;
+      vertical-align: text-bottom;
+      background-color: #d7dde2;
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-animation: spinner 0.75s linear infinite;
+      animation: spinner 0.75s linear infinite;
+    }
+    .dark-mode .page-spinner {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    @-webkit-keyframes spinner {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    @keyframes spinner {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+  </style>
+  <!-- Page loading scripts-->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector(".page-loading");
+        preloader.classList.remove("active");
+        setTimeout(function () {
+          preloader.remove();
+        }, 1500);
+      };
+    })();
+  </script>
+  <!-- Import Google Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet"
+    id="google-font"
+  />
+  <!-- Vendor styles-->
+  <link
+    rel="stylesheet"
+    media="screen"
+    href="assets/vendor/swiper/swiper-bundle.min.css"
+  />
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+  <!-- Customizer generated styles-->
+  <style id="customizer-styles">
+    :root {
+    }
+    .btn-primary {
+    }
+    .btn-warning {
+    }
+    .btn-info {
+    }
+    .btn-success {
+    }
+    .btn-danger {
+    }
+    .btn-outline-primary {
+    }
+    .btn-outline-warning {
+    }
+    .btn-outline-info {
+    }
+    .btn-outline-success {
+    }
+    .btn-outline-danger {
+    }
+  </style>
+  <!-- Google Tag Manager-->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-WKV3GT5");
+  </script>
+  <style type="text/css">
+    @font-face {
+      font-weight: 400;
+      font-style: normal;
+      font-family: circular;
+
+      src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2")
+        format("woff2");
+    }
+
+    @font-face {
+      font-weight: 700;
+      font-style: normal;
+      font-family: circular;
+
+      src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2")
+        format("woff2");
+    }
+  </style>
+</head>
